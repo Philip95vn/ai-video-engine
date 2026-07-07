@@ -1,0 +1,10 @@
+faster-whisper
+requests
+sentence-transformers
+moviepy
+Pillow
+pydub
+numpy
+rich
+orjson
+edge-tts
