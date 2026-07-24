@@ -95,10 +95,10 @@ The roadmap prioritizes:
 Current stage:
 
 ```text
-Sprint 1 - Speech To Text
+Sprint 2 - Timeline Analyzer
 ```
 
-Sprint 1 status:
+Sprint 2 status:
 
 ```text
 completed
@@ -107,27 +107,30 @@ completed
 Completed output:
 
 ```text
-temp/audio.wav
-output/transcript.json
+output/timeline.normalized.json
 ```
 
 Validated:
 
-- FFmpeg audio extraction works on Windows.
-- Faster Whisper works on CPU with `int8`.
+- Transcript JSON loads successfully.
+- Transcript schema validation works.
+- Normalized timeline schema validation works.
+- Scene IDs are deterministic.
+- Scene timing is preserved and validated.
+- Short segments can be merged.
+- Long segments can be split.
+- Speaker placeholder structure is present.
 - Vietnamese UTF-8 text is preserved.
-- Segment timestamps and IDs are generated.
-- All 32 automated tests pass.
-- Manual test with a real video passed.
+- All 50 automated tests pass.
+- Manual test with a real transcript passed.
 
 Next engineering sprint:
 
 ```text
-Sprint 2 - Timeline Analyzer
+Sprint 3 - Visual Director
 ```
 
 ---
-
 
 ## 4. High-level roadmap
 
@@ -570,6 +573,12 @@ docs: document Sprint 1 speech-to-text workflow
 ---
 
 ## 10. Sprint 2 - Timeline Analyzer
+
+### Status
+
+```text
+completed
+```
 
 ### Goal
 
@@ -1780,18 +1789,17 @@ Track A is first.
 
 Highest priority now:
 
-1. Complete docs.
-2. Commit docs to GitHub.
-3. Start Sprint 1.
-4. Get transcript JSON from real video.
-5. Build timeline analyzer.
-6. Add Visual Director.
-7. Render simple video.
-8. Merge original audio.
+1. Start Sprint 3 - Visual Director.
+2. Add prompt loader.
+3. Add prompt renderer.
+4. Add Ollama client.
+5. Add Visual Director output schema.
+6. Generate `output/timeline.director.json`.
+7. Validate AI output before later renderer stages.
 
 Do not jump to UI yet.
-
-Do not jump to advanced animations yet.
+Do not jump to renderer yet.
+Do not select final icon files yet.
 
 ---
 
@@ -2423,52 +2431,49 @@ Avoid:
 
 ## 51. Immediate next actions
 
-After Sprint 0B docs are added to repository:
+After Sprint 2 is merged:
 
-1. Commit docs.
+1. Create GitHub issue:
+
+```text
+Sprint 3 - Visual Director
+```
+
+2. Create branch:
 
 ```bash
-git add .
-git commit -m "docs: complete Sprint 0B project knowledge base"
-git push
+git switch main
+git pull --ff-only origin main
+git switch -c feat/sprint3-visual-director
 ```
 
-2. Open or create GitHub issue:
+3. First Sprint 3 goal:
 
 ```text
-Sprint 1 - Speech To Text
+load and render prompt templates
 ```
 
-3. Start Sprint 1 implementation.
-
-4. First Sprint 1 goal:
+4. Second Sprint 3 goal:
 
 ```text
-extract audio from input/video.mp4
+call local Ollama and write output/timeline.director.json
 ```
 
-5. Second Sprint 1 goal:
-
-```text
-transcribe temp/audio.wav to output/transcript.json
-```
+5. Keep Sprint 3 non-rendering.
 
 ---
 
 ## 52. Current recommended next commit
 
 ```text
-docs: complete Sprint 0B project knowledge base
+docs: mark Sprint 2 complete
 ```
 
 This commit should include:
 
 ```text
-AGENTS.md
-PROJECT_RULES.md
 README.md
 ROADMAP.md
-docs/*.md
 ```
 
 ---
@@ -2479,9 +2484,21 @@ Use this message:
 
 ```text
 Continue AI Video Engine.
-Read AGENTS.md, PROJECT_RULES.md, ROADMAP.md, and docs/ before coding.
-Current sprint: Sprint 1 - Speech To Text.
-Repository: <GitHub URL>
+
+Repository:
+https://github.com/Philip95vn/ai-video-engine
+
+Read AGENTS.md, PROJECT_RULES.md, ROADMAP.md, README.md, and docs/ before coding.
+
+Current status:
+Sprint 2 - Timeline Analyzer is completed.
+
+Current branch after merge should be main.
+
+Next sprint:
+Sprint 3 - Visual Director.
+
+Start by creating a GitHub issue and feature branch for Sprint 3.
 ```
 
 ---
@@ -2525,8 +2542,8 @@ Everything else becomes easier after that.
 | 0A | Bootstrap | `repo + skeleton` | completed |
 | 0B | Knowledge Base | `docs complete` | completed |
 | 1 | Speech To Text | `transcript.json` | completed |
-| 2 | Timeline Analyzer | `timeline.normalized.json` | next |
-| 3 | Visual Director | `timeline.director.json` | planned |
+| 2 | Timeline Analyzer | `timeline.normalized.json` | completed |
+| 3 | Visual Director | `timeline.director.json` | next |
 | 4 | Icon Selector | `timeline.visual.json` | planned |
 | 5 | Basic Renderer | `silent_video.mp4` | planned |
 | 6 | Exporter | `final.mp4` | planned |

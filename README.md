@@ -53,32 +53,42 @@ AI Video Engine is currently in early development.
 Current stage:
 
 ```text
-Sprint 1 - Speech To Text
+Sprint 2 - Timeline Analyzer
 ```
 
-Sprint 1 status:
+Sprint 2 status:
 
 ```text
 completed
 ```
 
-Working Sprint 1 command:
+Working Sprint 2 command:
 
 ```bash
-python scripts/transcribe.py input/video.mp4
+python scripts/analyze_timeline.py output/transcript.json
 ```
 
-Sprint 1 output:
+Sprint 2 output:
 
 ```text
-temp/audio.wav
-output/transcript.json
+output/timeline.normalized.json
 ```
+
+Validated:
+
+- Transcript JSON can be loaded and validated.
+- Normalized timeline JSON can be generated.
+- Scene IDs are deterministic.
+- Short segments and long segments are handled.
+- Speaker placeholder data is included.
+- Vietnamese UTF-8 text is preserved.
+- All 50 automated tests pass.
+- Manual test with a real transcript passed.
 
 The next engineering sprint is:
 
 ```text
-Sprint 2 - Timeline Analyzer
+Sprint 3 - Visual Director
 ```
 
 ---
@@ -350,6 +360,7 @@ ai-video-engine/
 │   ├── DecisionLog.md
 │   ├── Sprint0.md
 │   ├── Sprint1.md
+│   ├── Sprint2.md
 │   └── Glossary.md
 │
 ├── src/
@@ -1387,28 +1398,34 @@ Speaker separation and speaker labeling.
 
 ---
 
-## 38. Quick Start After Sprint 1
+## 38. Quick Start After Sprint 2
 
-Expected future command:
+Current working command:
 
 ```bash
-python -m ai_video_engine transcribe input/video.mp4
+python scripts/analyze_timeline.py output/transcript.json
 ```
 
 Expected output:
 
 ```text
-output/transcript.json
+output/timeline.normalized.json
 ```
 
-Expected transcript item:
+Expected normalized timeline scene:
 
 ```json
 {
-  "id": "seg_0001",
-  "start": 0.25,
-  "end": 2.16,
-  "text": "Ê! Sao hôm nay đến trễ?"
+  "id": "scene_0001",
+  "source_segment_ids": ["seg_0001"],
+  "start": 0.0,
+  "end": 3.14,
+  "duration": 3.14,
+  "speaker": {
+    "id": "SPEAKER_00",
+    "source": "unknown"
+  },
+  "text": "Xin chào Việt Nam."
 }
 ```
 
@@ -1436,9 +1453,21 @@ Use this message:
 
 ```text
 Continue AI Video Engine.
-Read AGENTS.md and PROJECT_RULES.md before coding.
-Current sprint: Sprint 1 - Speech To Text.
-Repository: <GitHub URL>
+
+Repository:
+https://github.com/Philip95vn/ai-video-engine
+
+Read AGENTS.md, PROJECT_RULES.md, ROADMAP.md, README.md, and docs/ before coding.
+
+Current status:
+Sprint 2 - Timeline Analyzer is completed.
+
+Current branch after merge should be main.
+
+Next sprint:
+Sprint 3 - Visual Director.
+
+Start by creating a GitHub issue and feature branch for Sprint 3.
 ```
 
 The repository should contain enough context for any AI coding agent to continue.
@@ -1447,19 +1476,21 @@ The repository should contain enough context for any AI coding agent to continue
 
 ## 41. Current Recommended Next Step
 
-Complete Sprint 0B documentation.
+Sprint 2 is completed.
 
-Then begin Sprint 1:
-
-```text
-Speech To Text
-```
-
-Sprint 1 deliverable:
+The next recommended step is:
 
 ```text
-input video/audio → output/transcript.json
+Sprint 3 - Visual Director
 ```
+
+Sprint 3 deliverable:
+
+```text
+output/timeline.normalized.json → output/timeline.director.json
+```
+
+Sprint 3 should remain separate from rendering and icon selection.
 
 ---
 
