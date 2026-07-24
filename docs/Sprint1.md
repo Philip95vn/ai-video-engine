@@ -2500,19 +2500,19 @@ That is enough.
 
 | ID | Task | Status |
 |---|---|---|
-| S1-001 | Decide package layout | planned |
-| S1-002 | Update pyproject for src package | planned |
-| S1-003 | Create common errors | planned |
-| S1-004 | Create JSON IO helpers | planned |
-| S1-005 | Create FFmpeg command builder | planned |
-| S1-006 | Test FFmpeg command builder | planned |
-| S1-007 | Create audio extractor | planned |
-| S1-008 | Create transcript schema | planned |
-| S1-009 | Test transcript schema | planned |
-| S1-010 | Create Faster Whisper transcriber | planned |
-| S1-011 | Create transcribe script | planned |
-| S1-012 | Manual test with real video | planned |
-| S1-013 | Update docs | planned |
+| S1-001 | Decide package layout | completed |
+| S1-002 | Update pyproject for src package | completed |
+| S1-003 | Create common errors | completed |
+| S1-004 | Create JSON IO helpers | completed |
+| S1-005 | Create FFmpeg command builder | completed |
+| S1-006 | Test FFmpeg command builder | completed |
+| S1-007 | Create audio extractor | completed |
+| S1-008 | Create transcript schema | completed |
+| S1-009 | Test transcript schema | completed |
+| S1-010 | Create Faster Whisper transcriber | completed |
+| S1-011 | Create transcribe script | completed |
+| S1-012 | Manual test with real video | completed |
+| S1-013 | Update docs | in progress |
 | S1-014 | Commit and push | planned |
 
 ---
