@@ -89,35 +89,45 @@ The roadmap prioritizes:
 
 ---
 
+
 ## 3. Current status
 
 Current stage:
 
 ```text
-Sprint 0B - Documentation and Knowledge Base
+Sprint 1 - Speech To Text
 ```
 
-Already completed:
+Sprint 1 status:
 
 ```text
-Sprint 0A - Bootstrap
+completed
 ```
 
-Current repository state:
+Completed output:
 
-- GitHub repo created
-- VS Code connected
-- initial bootstrap pushed
-- project structure exists
-- documentation is being expanded
+```text
+temp/audio.wav
+output/transcript.json
+```
+
+Validated:
+
+- FFmpeg audio extraction works on Windows.
+- Faster Whisper works on CPU with `int8`.
+- Vietnamese UTF-8 text is preserved.
+- Segment timestamps and IDs are generated.
+- All 32 automated tests pass.
+- Manual test with a real video passed.
 
 Next engineering sprint:
 
 ```text
-Sprint 1 - Speech To Text
+Sprint 2 - Timeline Analyzer
 ```
 
 ---
+
 
 ## 4. High-level roadmap
 
@@ -321,7 +331,7 @@ chore: bootstrap AI Video Engine project
 ### Status
 
 ```text
-In progress
+Completed
 ```
 
 ### Goal
@@ -409,7 +419,7 @@ docs: complete Sprint 0B project knowledge base
 ### Status
 
 ```text
-Next
+completed
 ```
 
 ### Goal
@@ -2513,9 +2523,9 @@ Everything else becomes easier after that.
 | Sprint | Name | Deliverable | Status |
 |---|---|---|---|
 | 0A | Bootstrap | `repo + skeleton` | completed |
-| 0B | Knowledge Base | `docs complete` | in progress |
-| 1 | Speech To Text | `transcript.json` | next |
-| 2 | Timeline Analyzer | `timeline.normalized.json` | planned |
+| 0B | Knowledge Base | `docs complete` | completed |
+| 1 | Speech To Text | `transcript.json` | completed |
+| 2 | Timeline Analyzer | `timeline.normalized.json` | next |
 | 3 | Visual Director | `timeline.director.json` | planned |
 | 4 | Icon Selector | `timeline.visual.json` | planned |
 | 5 | Basic Renderer | `silent_video.mp4` | planned |
