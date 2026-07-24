@@ -53,21 +53,32 @@ AI Video Engine is currently in early development.
 Current stage:
 
 ```text
-Sprint 0B - Documentation and Knowledge Base
+Sprint 1 - Speech To Text
 ```
 
-The project skeleton exists.
+Sprint 1 status:
+
+```text
+completed
+```
+
+Working Sprint 1 command:
+
+```bash
+python scripts/transcribe.py input/video.mp4
+```
+
+Sprint 1 output:
+
+```text
+temp/audio.wav
+output/transcript.json
+```
 
 The next engineering sprint is:
 
 ```text
-Sprint 1 - Speech To Text
-```
-
-Sprint 1 goal:
-
-```text
-input video/audio → transcript.json with timestamps
+Sprint 2 - Timeline Analyzer
 ```
 
 ---
